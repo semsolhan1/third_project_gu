@@ -24,11 +24,21 @@ public class DatabaseConnection {
 	
 	//Connection 객체를 리턴하는 메서드
 	public Connection getConnection() throws SQLException {
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String uid = "hr";
-		String upw = "hr";
-		
-		return DriverManager.getConnection(url,uid,upw);
-		
+	    String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	    String uid = "hr";
+	    String upw = "hr";
+	    
+	    Connection conn = null;
+	    try {
+	        conn = DriverManager.getConnection(url,uid,upw);
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    
+	    if (conn == null) {
+	        throw new SQLException("Failed to connect to the database.");
+	    }
+	    
+	    return conn;
 	}
 }
