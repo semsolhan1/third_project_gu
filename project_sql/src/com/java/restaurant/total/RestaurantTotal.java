@@ -87,7 +87,7 @@ public class RestaurantTotal {
 			
 			if(namevalue2.equals("한식")) {
 				
-				String sql2 = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, k.review_rating FROM Restaurant r LEFT JOIN ko_restaurant_review k ON k.restaurant_id = r.restaurant_id WHERE r.price <= ? and r.address = ?";
+				String sql2 = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, k.review_rating FROM Ko_Restaurant_Review k LEFT JOIN Restaurant r ON k.restaurant_id = r.restaurant_id WHERE r.price <= ? and r.address = ?";
 				try(Connection conn = connection.getConnection();
 						PreparedStatement pstmt = conn.prepareStatement(sql2);
 						){
@@ -131,7 +131,7 @@ public class RestaurantTotal {
 				return;
 			} else if(namevalue2.equals("일식")) {
 				
-				String sql2 = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, j.review_rating FROM Restaurant r LEFT JOIN ja_restaurant_review j ON j.restaurant_id = r.restaurant_id WHERE r.price <= ? and r.address = ?";
+				String sql2 = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, j.review_rating FROM Ja_Restaurant_Review j LEFT JOIN Restaurant r ON j.restaurant_id = r.restaurant_id WHERE r.price <= ? and r.address = ?";
 				try(Connection conn = connection.getConnection();
 						PreparedStatement pstmt = conn.prepareStatement(sql2);
 						){
@@ -174,7 +174,7 @@ public class RestaurantTotal {
 				
 				return;
 			} else if(namevalue2.equals("중식")) {
-				String sql2 = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, c.review_rating FROM Restaurant r LEFT JOIN ch_restaurant_review c ON c.restaurant_id = r.restaurant_id WHERE r.price <= ? and r.address = ?";
+				String sql2 = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, c.review_rating FROM Ch_Restaurant_Review c LEFT JOIN Restaurant r ON c.restaurant_id = r.restaurant_id WHERE r.price <= ? and r.address = ?";
 				try(Connection conn = connection.getConnection();
 						PreparedStatement pstmt = conn.prepareStatement(sql2);
 						){
@@ -217,7 +217,7 @@ public class RestaurantTotal {
 				
 				return;
 			} else if(namevalue2.equals("양식")) {
-				String sql2 = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, w.review_rating FROM Restaurant r LEFT JOIN we_restaurant_review w ON w.restaurant_id = r.restaurant_id WHERE r.price <= ? and r.address = ?";
+				String sql2 = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, w.review_rating FROM We_Restaurant_Review w LEFT JOIN Restaurant r ON w.restaurant_id = r.restaurant_id WHERE r.price <= ? and r.address = ?";
 				try(Connection conn = connection.getConnection();
 						PreparedStatement pstmt = conn.prepareStatement(sql2);
 						){
