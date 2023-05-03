@@ -55,184 +55,20 @@ public class RestaurantAdd implements AppService{
 
 
 			if(menuType == 1) { //한식
-				String sql = "INSERT INTO Restaurant "
-						+ "VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL, ?, ?, ?, ?)";
-
-				String sqlK = "INSERT INTO Ko_Restaurant_review "
-						+ "VALUES(SEQ_Ko_Restaurant_Review_ko_id.NEXTVAL,SEQ_Restaurant_restaurant_id.CURRVAL,?)";
-
-
-				try {
-
-					Connection conn = connection.getConnection();
-					PreparedStatement pstmt = conn.prepareStatement(sql);
-
-					conn.setAutoCommit(false);
-
-					pstmt.setString(1, resName);
-					pstmt.setString(2, menuName);
-					pstmt.setInt(3, menuPrice);
-					pstmt.setString(4, resRegion);
-
-					if(pstmt.executeUpdate() == 1) {
-						System.out.printf("\n### [%s] 식당이 신규 등록되었습니다.\n", resName);
-					} else {
-						System.out.println("새로운 식당 등록 실패!");
-					}
-
-					pstmt = conn.prepareStatement(sqlK);
-					pstmt.setInt(1, resReview);
-
-					if(pstmt.executeUpdate() == 1) {
-						System.out.println("메뉴 타입 설정 완료!");
-						conn.commit();
-					} else {
-						System.out.println("메뉴 타입 설정 실패!");
-						conn.rollback();
-					}
-
-					break;
-
-
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+				restaurantMenuType.menuTypeKo(resReview, resName, menuName, menuPrice, resRegion);
+				break;
 				
 			} else if(menuType == 2) { //중식
-				String sql = "INSERT INTO Restaurant "
-						+ "VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL, ?, ?, ?, ?)";
+				restaurantMenuType.menuTypeCh(resReview, resName, menuName, menuPrice, resRegion);
+				break;
 
-				String sqlK = "INSERT INTO Ch_Restaurant_Review "
-						+ "VALUES(SEQ_Ch_Restaurant_Review_ch_id.NEXTVAL,SEQ_Restaurant_restaurant_id.CURRVAL,?)";
-
-
-				try {
-
-					Connection conn = connection.getConnection();
-					PreparedStatement pstmt = conn.prepareStatement(sql);
-
-					conn.setAutoCommit(false);
-
-					pstmt.setString(1, resName);
-					pstmt.setString(2, menuName);
-					pstmt.setInt(3, menuPrice);
-					pstmt.setString(4, resRegion);
-
-					if(pstmt.executeUpdate() == 1) {
-						System.out.printf("\n### [%s] 식당이 신규 등록되었습니다.\n", resName);
-						//						break;
-					} else {
-						System.out.println("새로운 식당 등록 실패!");
-						//						break;
-					}
-
-					pstmt = conn.prepareStatement(sqlK);
-					pstmt.setInt(1, resReview);
-
-					if(pstmt.executeUpdate() == 1) {
-						System.out.println("메뉴 타입 설정 완료!");
-						conn.commit();
-					} else {
-						System.out.println("메뉴 타입 설정 실패!");
-						conn.rollback();
-					}
-
-					break;
-
-
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
 			} else if(menuType == 3) { //양식
-				String sql = "INSERT INTO Restaurant "
-						+ "VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL, ?, ?, ?, ?)";
+				restaurantMenuType.menuTypeWe(resReview, resName, menuName, menuPrice, resRegion);
+				break;
 
-				String sqlK = "INSERT INTO We_Restaurant_Review "
-						+ "VALUES(SEQ_We_Restaurant_Review_we_id.NEXTVAL,SEQ_Restaurant_restaurant_id.CURRVAL,?)";
-
-
-				try {
-
-					Connection conn = connection.getConnection();
-					PreparedStatement pstmt = conn.prepareStatement(sql);
-
-					conn.setAutoCommit(false);
-
-					pstmt.setString(1, resName);
-					pstmt.setString(2, menuName);
-					pstmt.setInt(3, menuPrice);
-					pstmt.setString(4, resRegion);
-
-					if(pstmt.executeUpdate() == 1) {
-						System.out.printf("\n### [%s] 식당이 신규 등록되었습니다.\n", resName);
-						//						break;
-					} else {
-						System.out.println("새로운 식당 등록 실패!");
-						//						break;
-					}
-
-					pstmt = conn.prepareStatement(sqlK);
-					pstmt.setInt(1, resReview);
-
-					if(pstmt.executeUpdate() == 1) {
-						System.out.println("메뉴 타입 설정 완료!");
-						conn.commit();
-					} else {
-						System.out.println("메뉴 타입 설정 실패!");
-						conn.rollback();
-					}
-
-					break;
-
-
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
 			} else if(menuType == 4) { //일식
-				String sql = "INSERT INTO Restaurant "
-						+ "VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL, ?, ?, ?, ?)";
-
-				String sqlK = "INSERT INTO Ja_restaurant_review "
-						+ "VALUES(SEQ_Ja_Restaurant_Review_ja_id.NEXTVAL,SEQ_Restaurant_restaurant_id.CURRVAL,?)";
-
-
-				try {
-
-					Connection conn = connection.getConnection();
-					PreparedStatement pstmt = conn.prepareStatement(sql);
-
-					conn.setAutoCommit(false);
-
-					pstmt.setString(1, resName);
-					pstmt.setString(2, menuName);
-					pstmt.setInt(3, menuPrice);
-					pstmt.setString(4, resRegion);
-
-					if(pstmt.executeUpdate() == 1) {
-						System.out.printf("\n### [%s] 식당이 신규 등록되었습니다.\n", resName);
-						//						break;
-					} else {
-						System.out.println("새로운 식당 등록 실패!");
-						//						break;
-					}
-
-					pstmt = conn.prepareStatement(sqlK);
-					pstmt.setInt(1, resReview);
-
-					if(pstmt.executeUpdate() == 1) {
-						System.out.println("메뉴 타입 설정 완료!");
-						conn.commit();
-					} else {
-						System.out.println("메뉴 타입 설정 실패!");
-						conn.rollback();
-					}
-
-					break;
-
-
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+				restaurantMenuType.menuTypeWe(resReview, resName, menuName, menuPrice, resRegion);
+				break;
 			}
 
 

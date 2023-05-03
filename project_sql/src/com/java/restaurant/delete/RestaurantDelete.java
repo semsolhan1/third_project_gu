@@ -7,12 +7,15 @@ import java.sql.SQLException;
 
 import com.java.common.AppService;
 import com.java.common.DatabaseConnection;
+import com.java.restaurant.add.RestaurantMenuType;
 import com.java.view.StartUI;
 
 public class RestaurantDelete implements AppService{
 
 	private DatabaseConnection connection = DatabaseConnection.getInstance();
 
+	private final RestaurantMenuTypeDel restaurantMenuTypeDel = new RestaurantMenuTypeDel();	
+	
 	@Override
 	public void start() {
 
@@ -38,46 +41,27 @@ public class RestaurantDelete implements AppService{
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			
-			String sqld = "DELETE FROM ko_restaurant_review "
-						+ "WHERE restaurant_id = (SELECT restaurant_id "
-						+ "FROM restaurant "
-						+ "WHERE restaurant_name = " + "'" + resName + "'" + ")";
-			
-			String sql = "DELETE FROM Restaurant WHERE restaurant_name = " + "'" + resName + "'";
 
-			try {
+			System.out.print("식당 메뉴의 종류[1.한식,2.중식,3.양식,4.일식]: ");
+			int menuType = StartUI.inputInteger();
 
-				Connection conn = connection.getConnection();
-				PreparedStatement pstmt = conn.prepareStatement(sqld);
-
-				conn.setAutoCommit(false);
-
-				if(pstmt.executeUpdate() == 1) {
-					System.out.printf("\n### [%s] 식당이 삭제되는 중입니다.\n", resName);
-				} else {
-					System.out.println("식당 삭제 실패!");
-				}
-
-				pstmt = conn.prepareStatement(sql);
-				
-
-				if(pstmt.executeUpdate() == 1) {
-					System.out.println("식당 삭제 완료!");
-					conn.commit();
-				} else {
-					System.out.println("식당 삭제 실패!");
-					conn.rollback();
-				}
-
+			if(menuType == 1) { //한식
+				restaurantMenuTypeDel.menuTypeKo(resName);
 				break;
-
-
-			} catch (SQLException e) {
-				e.printStackTrace();
+			} else if(menuType == 2) { //중식
+				restaurantMenuTypeDel.menuTypeCh(resName);
+				break;
+			} else if(menuType == 3) { //양식
+				restaurantMenuTypeDel.menuTypeWe(resName);
+				break;
+			} else if(menuType == 4) { //일식
+				restaurantMenuTypeDel.menuTypeJa(resName);
+				break;
 			}
-			
-			
+
+
+
+
 
 
 		}
