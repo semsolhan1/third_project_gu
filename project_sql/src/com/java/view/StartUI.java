@@ -46,12 +46,59 @@ public class StartUI {
 	        System.out.print("\u001B[31;1;4;41;42;43;44;45;46m >>> 원하는 숫자를 눌러주세요 :\u001B[0m");
 		}
 		
+		public static void searchMenu() {
+			System.out.println("\u001B[31;1;4;41;42;43;44;45;46m----------------------------------------------------\u001B[0m");
+	        System.out.println("1.전체 검색");
+	        System.out.println("2.국가별 맛집 검색(한식,중식,일식,양식)");
+	        System.out.println("3.지역별 맛집 검색(서울,인천,경기도,강원도,충청도,경상도,전라도)");	  
+	        System.out.println("4.가격별 맛집 검색(만원 미만,2만원 미만,3만원 미만,4만원 미만,5만원 미만,5만원 이상)");
+	        System.out.println("5.맞춤 맞집 검색");	        
+	        System.out.println("6.메인 화면으로 돌아가기");	  
+	        System.out.print("\u001B[31;1;4;41;42;43;44;45;46m >>> 원하는 숫자를 눌러주세요 :\u001B[0m");
+		}
 		
-//	        System.out.println("1.맛");
-//	        System.out.println("2.거리");
-//	        System.out.println("3.가격");
-//	        System.out.println("4.종합");
-	        
+		public static void fourMenu() {
+			System.out.println("\u001B[31;1;4;41;42;43;44;45;46m----------------------------------------------------\u001B[0m");
+			System.out.println("1.한식 검색");
+			System.out.println("2.일식 검색");
+			System.out.println("3.중식 검색");
+			System.out.println("4.양식 검색");
+			System.out.print("\u001B[31;1;4;41;42;43;44;45;46m >>> 원하는 숫자를 눌러주세요 :\u001B[0m");
+		}
+		
+		public static void region() {
+			System.out.println("\u001B[31;1;4;41;42;43;44;45;46m----------------------------------------------------\u001B[0m");
+			System.out.println("1.서울 검색");
+			System.out.println("2.인천 검색");
+			System.out.println("3.경기도 검색");
+			System.out.println("4.강원도 검색");
+			System.out.println("5.충청도 검색");
+			System.out.println("6.경상도 검색");
+			System.out.println("7.전라도 검색");
+			System.out.print("\u001B[31;1;4;41;42;43;44;45;46m >>> 원하는 숫자를 눌러주세요 :\u001B[0m");
+		}
+		
+		public static void pricethen() {
+			System.out.println("\u001B[31;1;4;41;42;43;44;45;46m----------------------------------------------------\u001B[0m");
+			System.out.println("1.0 ~ 9900원 검색");
+			System.out.println("2.10000 ~ 19900원 검색");
+			System.out.println("3.20000 ~ 29900원 검색");
+			System.out.println("4.30000 ~ 39900원 검색");
+			System.out.println("5.40000 ~ 49900원 검색");
+			System.out.println("6.50000원 이상 검색");
+			System.out.print("\u001B[31;1;4;41;42;43;44;45;46m >>> 원하는 숫자를 눌러주세요 :\u001B[0m");
+		}
+		
+		public static void totalthen() {
+			System.out.println("\u001B[31;1;4;41;42;43;44;45;46m----------------------------------------------------\u001B[0m");
+			System.out.println("1.이름으로 검색");
+			System.out.println("2.조건별 맛집 검색");
+			System.out.print("\u001B[31;1;4;41;42;43;44;45;46m >>> 원하는 숫자를 눌러주세요 :\u001B[0m");
+			
+		}
+		
+		
+		
 	        
 	}
 
