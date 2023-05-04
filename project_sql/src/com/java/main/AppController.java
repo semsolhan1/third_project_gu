@@ -31,6 +31,7 @@ public class AppController {
 				
 			default:
 				System.out.println("# 메뉴를 다시 입력하세요.");
+				return;
 			}
 			
 			service.start();
