@@ -50,6 +50,10 @@ public class RestaurantAdd implements AppService{
 			String resRegion = StartUI.inputString();
 			System.out.print("메뉴의 종류[1.한식,2.중식,3.양식,4.일식]: ");
 			int menuType = StartUI.inputInteger();
+			if(menuType != 1 && menuType != 2 && menuType != 3 && menuType != 4) {
+                System.out.println("메인화면으로 돌아갑니다.");
+                break;
+            }
 			System.out.print("식당의 리뷰수: ");
 			int resReview = StartUI.inputInteger();
 
