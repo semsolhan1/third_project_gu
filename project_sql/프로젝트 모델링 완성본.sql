@@ -81,6 +81,17 @@ VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL,'스케줄합정','스케줄 김치볶음밥',180
 INSERT INTO Restaurant
 VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL,'세마오리농원','생오리 한마리',79000,'경기도');
 
+INSERT INTO Restaurant
+VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL,'쌤쌤쌤','SWEET POTATO GNOCCHI',9000,'서울');
+
+INSERT INTO Restaurant
+VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL,'항아리물회','물회',20000,'강원도');
+
+INSERT INTO Restaurant
+VALUES(SEQ_Restaurant_restaurant_id.NEXTVAL,'동화가든','짬뽕순두부',10000,'강원도');
+
+
+
 INSERT INTO ko_restaurant_review
 VALUES(SEQ_Ko_Restaurant_Review_ko_id.NEXTVAL,1,3458);
 
@@ -95,6 +106,15 @@ VALUES(SEQ_Ko_Restaurant_Review_ko_id.NEXTVAL,4,1486);
 
 INSERT INTO ko_restaurant_review
 VALUES(SEQ_Ko_Restaurant_Review_ko_id.NEXTVAL,5,316);
+
+INSERT INTO we_restaurant_review
+VALUES(SEQ_We_Restaurant_Review_we_id.NEXTVAL,6,1764);
+
+INSERT INTO ko_restaurant_review
+VALUES(SEQ_Ko_Restaurant_Review_ko_id.NEXTVAL,7,6500);
+
+INSERT INTO ko_restaurant_review
+VALUES(SEQ_Ko_Restaurant_Review_Ko_id.NEXTVAL,8,13000);
 
 COMMIT;
 
