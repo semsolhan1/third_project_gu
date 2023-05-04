@@ -20,8 +20,14 @@ public class RestaurantTotal {
 		
 		while(true) {
 		
+			if(totalnum != 1 ||totalnum != 2) {
+                break;
+            } 
+			
 			switch(totalnum) {
 		
+			
+			
 		case 1:
 			String sql = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, COALESCE(k.review_rating, j.review_rating, c.review_rating, w.review_rating) as review_rating FROM Restaurant r LEFT JOIN ko_restaurant_review k ON k.restaurant_id = r.restaurant_id LEFT JOIN ja_restaurant_review j ON j.restaurant_id = r.restaurant_id LEFT JOIN ch_restaurant_review c ON c.restaurant_id = r.restaurant_id LEFT JOIN we_restaurant_review w ON w.restaurant_id = r.restaurant_id WHERE r.restaurant_name=?";
 			System.out.print("이름을 입력해주세요:");
