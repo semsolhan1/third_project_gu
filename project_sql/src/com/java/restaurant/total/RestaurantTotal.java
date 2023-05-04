@@ -20,7 +20,7 @@ public class RestaurantTotal {
 		
 		while(true) {
 		
-			if(totalnum != 1 ||totalnum != 2) {
+			if(totalnum != 1 && totalnum != 2) {
                 break;
             } 
 			

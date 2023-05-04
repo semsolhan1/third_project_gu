@@ -43,19 +43,19 @@ public class Restaurantrepository {
 
 			}
 			System.out.println("조회된 행의 개수: " + count + "개");
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void foodtype(int fourvalue) {
+		
 		while(true) {
-			
-			if(fourvalue != 1 ||fourvalue != 2 ||fourvalue != 3 ||fourvalue != 4 ) {
+				
+			if(fourvalue != 1 && fourvalue != 2 && fourvalue != 3 && fourvalue != 4) {
                 break;
             } 
-
 
 			if(fourvalue==1) {
 				String sql = "SELECT r.restaurant_id, r.restaurant_name, r.main_menu, r.price, r.address, k.review_rating FROM ko_restaurant_review k LEFT JOIN Restaurant r ON k.restaurant_id = r.restaurant_id";
@@ -217,7 +217,8 @@ public class Restaurantrepository {
 				
 			}
 			System.out.println("\n==== 계속 진행하시려면 ENTER를 누르세요====");
-			StartUI.inputString();
+			break;
+//			StartUI.inputString();
 			
 		}
 
@@ -226,7 +227,7 @@ public class Restaurantrepository {
 	public void regiontype(int regionnum) {
 		while(true) {
 			
-			if(regionnum != 1 ||regionnum != 2 ||regionnum != 3 ||regionnum != 4 || regionnum != 5 || regionnum != 6 || regionnum != 7 ) {
+			if(regionnum != 1 && regionnum != 2 && regionnum != 3 && regionnum != 4 && regionnum != 5 && regionnum != 6 && regionnum != 7 ) {
                 break;
             } 
 
@@ -518,7 +519,7 @@ public class Restaurantrepository {
 	public void pricetype(int pricenum) {
 		while(true) {
 			
-			if(pricenum != 1 ||pricenum != 2 ||pricenum != 3 ||pricenum != 4 || pricenum != 5 || pricenum != 6 ) {
+			if(pricenum != 1 && pricenum != 2 && pricenum != 3 && pricenum != 4 && pricenum != 5 && pricenum != 6 ) {
                 break;
             } 
 
